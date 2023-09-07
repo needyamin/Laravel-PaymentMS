@@ -38,3 +38,8 @@ Route::group(['middleware' => ['auth']], function() {
 #Route::get('/dashboard', function () {
     #return view('core/index');
 #});
+
+## activity log
+use App\Http\Controllers\logActivity;
+Route::get('admin/addlog', [logActivity::class, 'myTestAddToLog']);
+Route::get('admin/viewlog', [logActivity::class,'logActivity']);
